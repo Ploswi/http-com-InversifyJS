@@ -1,0 +1,25 @@
+{
+  "name": "servico-inversify-dip",
+  "version": "1.0.0",
+  "description": "Servico HTTP com Node.js, TypeScript e InversifyJS aplicando DIP e IoC",
+  "scripts": {
+    "dev": "ts-node-dev src/main.ts",
+    "build": "tsc",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "inversify": "^6.0.2",
+    "nodemailer": "^6.9.13",
+    "reflect-metadata": "^0.2.2",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.30",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  }
+}
