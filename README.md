@@ -5,6 +5,7 @@ utilizando Node.js, TypeScript e InversifyJS.
 
 ## Executar
 npm install
+
 npm run dev
 
 ## Endpoint
