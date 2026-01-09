@@ -7,7 +7,8 @@ import { InvalidReportSizeError } from '../errors/InvalidReportSizeError';
 import { TYPES } from '../../container/types';
 
 @injectable()
-export class ReportServiceImpl implements ReportService {
+export class ReportServiceImpl implements ReportService
+{
   constructor(
     @inject(TYPES.Logger) private logger: Logger,
     @inject(TYPES.Mailer) private mailer: Mailer
@@ -23,7 +24,7 @@ export class ReportServiceImpl implements ReportService {
       cidade: faker.location.city()
     }));
 
-    const body = data.map(d => `Nome: ${d.nome} | Cidade: ${d.cidade}`).join('\n');
+    const body = data.map(d => `Nome: ${d.nome} - Cidade: ${d.cidade}`).join('\n');
 
     await this.mailer.send(email, 'Relatório Gerado', body);
     this.logger.info('Relatório enviado com sucesso');

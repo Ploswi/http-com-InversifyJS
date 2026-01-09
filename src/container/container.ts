@@ -8,8 +8,14 @@ import { ReportServiceImpl } from '../domain/services/ReportServiceImpl';
 const container = new Container();
 const env = process.env.APP_ENV || 'dev';
 
-container.bind(TYPES.Logger).toConstantValue(new WinstonLogger(env));
-container.bind(TYPES.Mailer).toConstantValue(new NodemailerMailer(env));
-container.bind(TYPES.ReportService).to(ReportServiceImpl);
+container.bind(TYPES.Logger)
+  .toConstantValue(new WinstonLogger(env));
+
+container.bind(TYPES.Mailer)
+  .to(NodemailerMailer)
+  .inSingletonScope();
+
+container.bind(TYPES.ReportService)
+  .to(ReportServiceImpl);
 
 export { container };
