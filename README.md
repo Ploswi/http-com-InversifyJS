@@ -1,7 +1,6 @@
 # Serviço HTTP com InversifyJS (DIP / IoC)
 
-Projeto acadêmico para demonstrar Inversão de Dependência (DIP) e Inversão de Controle (IoC)
-utilizando Node.js, TypeScript e InversifyJS.
+Projeto acadêmico para demonstrar Inversão de Dependência (DIP) e Inversão de Controle (IoC) utilizando Node.js, TypeScript e InversifyJS.
 
 Obs.: Deixamos o .env no repositório apenas para facilitar, mas sem dados reais.
 
@@ -11,9 +10,14 @@ npm install
 npm run dev
 
 ## Endpoint
-GET http://localhost:PORTA/relatorio/N?email=destino@email.com
+GET http://localhost:PORTA/relatorio/N?email=DESTINO@EMAIL.COM
+```
+PORTA: porta local
 
-Onde n = quantidade de dados fictícios
+N = quantidade de dados fictícios
+
+DESTINO@EMAIL.COM = e-mail destino que receberá
+```
 
 ---
 
