@@ -3,7 +3,7 @@
 Projeto acadêmico para demonstrar Inversão de Dependência (DIP) e Inversão de Controle (IoC)
 utilizando Node.js, TypeScript e InversifyJS.
 
-Obs.: deixamos o .env no repositório apenas para facilitar, mas sem dados reais.
+Obs.: Deixamos o .env no repositório apenas para facilitar, mas sem dados reais.
 
 ## Executar
 npm install

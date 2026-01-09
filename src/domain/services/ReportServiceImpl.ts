@@ -9,12 +9,14 @@ import { TYPES } from '../../container/types';
 @injectable()
 export class ReportServiceImpl implements ReportService
 {
-  constructor(
+  constructor
+  (
     @inject(TYPES.Logger) private logger: Logger,
     @inject(TYPES.Mailer) private mailer: Mailer
   ) {}
 
-  async generateAndSend(email: string, n: number): Promise<void> {
+  async generateAndSend(email: string, n: number): Promise<void>
+  {
     if (n <= 0 || n > 10) throw new InvalidReportSizeError();
 
     this.logger.info(`Iniciando geração de relatório (${n})`);

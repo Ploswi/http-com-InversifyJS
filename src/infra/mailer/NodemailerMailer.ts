@@ -5,19 +5,24 @@ import { Logger } from '../../domain/interfaces/Logger';
 import { TYPES } from '../../container/types';
 
 @injectable()
-export class NodemailerMailer implements Mailer {
+export class NodemailerMailer implements Mailer
+{
   private transporter: Transporter | null = null;
 
-  constructor(
+  constructor
+  (
     @inject(TYPES.Logger) private logger: Logger
   ) {}
 
-  private async getMailClient(): Promise<Transporter> {
-    if (this.transporter) {
+  private async getMailClient(): Promise<Transporter>
+  {
+    if (this.transporter)
+      {
       return this.transporter;
     }
 
-    if (process.env.APP_ENV === 'dev') {
+    if (process.env.APP_ENV === 'dev')
+    {
       // Ethereal (DEV)
       const testAccount = await nodemailer.createTestAccount();
 
@@ -32,7 +37,9 @@ export class NodemailerMailer implements Mailer {
       });
 
       this.logger.info(`Ethereal Mail configurado: ${testAccount.user}`);
-    } else {
+    }
+    else
+      {
       // SMTP REAL (PROD)
       this.transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
@@ -50,7 +57,8 @@ export class NodemailerMailer implements Mailer {
     return this.transporter;
   }
 
-  async send(to: string, subject: string, body: string): Promise<void> {
+  async send(to: string, subject: string, body: string): Promise<void>
+  {
     const mailClient = await this.getMailClient();
 
     const info = await mailClient.sendMail({
