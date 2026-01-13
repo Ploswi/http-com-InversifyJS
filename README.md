@@ -4,7 +4,7 @@ Projeto acadêmico para demonstrar Inversão de Dependência (DIP) e Inversão d
 
 Obs.: Deixamos o .env no repositório apenas para facilitar, mas sem dados reais.
 
-## Executar
+## Executar HTTP
 npm install
 
 npm run dev
@@ -18,6 +18,12 @@ N = quantidade de dados fictícios
 
 DESTINO@EMAIL.COM = e-mail destino que receberá
 ```
+
+## Executar Testes Unitários
+
+npx vitest src\domain\report-http-adapter.spec.ts
+
+npx vitest src\domain\report-service.spec.ts
 
 ---
 
